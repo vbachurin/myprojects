@@ -7,8 +7,6 @@ lazy val root = (project in file(".")).
       libraryDependencies ++= Seq(
        "junit" % "junit" % "4.8.1" % "test"
     )
-    
-libraryDependencies += "org.scalactic" %% "scalactic" % "2.2.6"
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
+libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % Test
 
   

@@ -10,7 +10,7 @@ import scala.collection.mutable.HashMap
 import scala.io.BufferedSource
 import scala.io.Source
 
-object Main {
+object FlightsStats {
 
   def main(args: Array[String]): Unit = {
     // get the input filename from first argument, else use default one

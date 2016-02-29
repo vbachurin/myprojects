@@ -4,17 +4,17 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
 
-class MainTest {
+class FlightsStatsTest {
   
   // "beforeClass"
-	val source = Main.bufferedSource("src/test/resources/planes_log.csv.gz")
+	val source = FlightsStats.bufferedSource("src/test/resources/planes_log.csv.gz")
 
   @Test
   def testArrivals(): Unit = {
     // given
     
     // when
-    val (arrivals, delta) = Main.calculateStats(source)
+    val (arrivals, delta) = FlightsStats.calculateStats(source)
     
     // then
     assertEquals(8535, arrivals.get("\"LGA\"").get)
@@ -25,7 +25,7 @@ class MainTest {
     // given
     
     // when
-    val (arrivals, delta) = Main.calculateStats(source)
+    val (arrivals, delta) = FlightsStats.calculateStats(source)
     
     // then
     assertEquals(5, delta.get("\"LGA\"").get)
@@ -36,7 +36,7 @@ class MainTest {
     // given
     
     // when
-    val (arrivals, delta) = Main.calculateStats(source)
+    val (arrivals, delta) = FlightsStats.calculateStats(source)
     
     // then
     assertNull(arrivals.get("\"ORIGIN\"").getOrElse(null))
